@@ -3,120 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Art Forms - Sutradhar</title>
     <link rel="stylesheet" href="artform.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-   <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    <!-- Firebase Auth Script -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-// Firebase config (same as your index.html)
-const firebaseConfig = {
-  apiKey: "AIzaSyBv23cbRzW4y224z3YDPPMvGMkx0k-Mxu8",
-  authDomain: "sutradhar-2c17d.firebaseapp.com",
-  projectId: "sutradhar-2c17d",
-  storageBucket: "sutradhar-2c17d.firebasestorage.app",
-  messagingSenderId: "527545107973",
-  appId: "1:527545107973:web:a7f1548107c826429bbe6c",
-  measurementId: "G-86KK9NQDDT"
-};
+        const firebaseConfig = {
+            apiKey: "AIzaSyBv23cbRzW4y224z3YDPPMvGMkx0k-Mxu8",
+            authDomain: "sutradhar-2c17d.firebaseapp.com",
+            projectId: "sutradhar-2c17d",
+            storageBucket: "sutradhar-2c17d.firebasestorage.app",
+            messagingSenderId: "527545107973",
+            appId: "1:527545107973:web:a7f1548107c826429bbe6c",
+            measurementId: "G-86KK9NQDDT"
+        };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
 
-// Check if user is logged in
-onAuthStateChanged(auth, (user) => {
-  if (!user) {
-    alert("You must log in first!");
-    window.location.href = "index.html";
-  }
-});
-</script>
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                alert("You must log in first!");
+                window.location.href = "index.html";
+            }
+        });
+    </script>
 
-<nav class="navbar">
-		<div class="navdiv">
-			<div class="logo"><a href="#">Sutradhar</a> </div>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="#">Artists</a></li>
-				<li><a href="artform.html">Artform</a></li>
-				<li><a href="community.html">Community</a></li>
-				<li><a href="faq.html">FAQ</a></li>
-			</ul>
-		</div>
-	</nav>
-         <div class="content">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="#">Sutradhar</a></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Artists</a></li>
+                <li><a href="artform.html">Artform</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Heading -->
+    <div class="content">
         <h1 class="heading"><u>Art Forms</u></h1>
-     </div>
+    </div>
 
-<div class="cards-container">
-    <a href="#">
-<div class="card">
-    <img src="images/artform1.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Painting and scrolls</h5>
-      <p class="card-text">Indian painting spans from prehistoric rock art and Ajanta murals to Mughal–Rajput miniatures and living folk styles, unified by vivid color, symbolism, and storytelling. Scroll traditions narrate epics and local lore across long cloth or paper with bold outlines and earthy palettes.</p>
-    </div>
-  </div>
-  </a>
+    <!-- Art Cards -->
+    <div class="cards-container">
+        <div class="card">
+            <a href="#"><img src="images/artform1.jpg" class="card-img-top" alt="Painting and Scrolls"></a>
+            <div class="card-body">
+                <h5 class="card-title">Painting and Scrolls</h5>
+                <p class="card-text">Indian painting spans from prehistoric rock art and Ajanta murals to Mughal–Rajput miniatures and living folk styles, unified by vivid color, symbolism, and storytelling. Scroll traditions narrate epics and local lore across long cloth or paper with bold outlines and earthy palettes.</p>
+            </div>
+        </div>
 
-<a href="#">
-  <div class="card">
-    <img src="images/artform2.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Textile, Dyeing, and Printing Arts</h5>
-      <p class="card-text">Indian textiles excel in weaving, dyeing, printing, and embroidery, from fine cottons and silks to regionally distinct brocades, jamdani, and shawls. Resist-dye and print traditions—bandhani, leheriya, ajrakh, kalamkari, ikat—create signature motifs with natural dyes, hand-blocks, and yarn-dye techniques.</p>
-    </div>
-  </div>
-  </a>
-  
-  <a href="#">
-  <div class="card">
-    <img src="images/artform3.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Ritual Floor and Body Arts</h5>
-      <p class="card-text">Ritual floor arts like rangoli, kolam, alpana, and mandana are ephemeral threshold designs made with rice flour or colored powders to invite auspiciousness, protection, and welcome. Body arts such as mehndi (henna), alta, and turmeric-based adornment mark rites and festivals with symbolic motifs that bless, beautify, and ward off evil.</p>
-    </div>
-  </div>
-  </a>
+        <div class="card">
+            <a href="#"><img src="images/artform2.jpg" class="card-img-top" alt="Textile, Dyeing, and Printing Arts"></a>
+            <div class="card-body">
+                <h5 class="card-title">Textile, Dyeing, and Printing Arts</h5>
+                <p class="card-text">Indian textiles excel in weaving, dyeing, printing, and embroidery, from fine cottons and silks to regionally distinct brocades, jamdani, and shawls. Resist-dye and print traditions—bandhani, leheriya, ajrakh, kalamkari, ikat—create signature motifs with natural dyes, hand-blocks, and yarn-dye techniques.</p>
+            </div>
+        </div>
 
-<a href="#">
-  <div class="card">
-     <img src="images/artform4.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Masks, Puppetry, and Performing Crafts</h5>
-      <p class="card-text">Masks in Indian performance traditions—such as Chhau, Theyyam, and Himalayan Cham are crafted from clay, wood, bamboo, or papier-mâché to embody deities, spirits, and heroes in ritual theatre. Puppetry spans string (Kathputli), shadow (Tholu Bommalata, Togalu Gombeyaata), and glove/rod forms, with artisans making masks, costumes, and props that animate epics and folklore on stage.</p>
-    </div>
-  </div>
-  </a>
-  
-  
-<a href="#"> 
-  <div class="card">
-    <img src="images/artform5.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Weaving and Loom Heritage</h5>
-      <p class="card-text">India’s weaving and loom heritage spans millennia, from fine cotton muslins and khadi to luxuriant silks like Kanchipuram, Banarasi, Paithani, and rich woollens such as Kani and Kullu shawls. Distinct regional looms and techniques—ikat (Pochampally, Patola), jamdani, chanderi, and durries—create signature textures, borders, and motifs, preserving living traditions of handloom craftsmanship.</p>
-    </div>
-  </div>
-  </a> 
+        <div class="card">
+            <a href="#"><img src="images/artform3.jpg" class="card-img-top" alt="Ritual Floor and Body Arts"></a>
+            <div class="card-body">
+                <h5 class="card-title">Ritual Floor and Body Arts</h5>
+                <p class="card-text">Ritual floor arts like rangoli, kolam, alpana, and mandana are ephemeral threshold designs made with rice flour or colored powders to invite auspiciousness, protection, and welcome. Body arts such as mehndi (henna), alta, and turmeric-based adornment mark rites and festivals with symbolic motifs that bless, beautify, and ward off evil.</p>
+            </div>
+        </div>
 
- <a href="#">
-  <div class="card">
-    <img src="images/artform6.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Stone, Lacquer, and Other Crafts</h5>
-      <p class="card-text">Stone crafts include temple sculpture, jali latticework, and everyday utensils carved in marble, sandstone, and granite, especially from Rajasthan, Odisha, and Tamil Nadu. Lacquer crafts like Etikoppaka, Channapatna, and Kutch turn wood and gourds glossy for toys, bangles, and decor, while allied traditions—bidri inlay, bell-metal casting, terracotta, cane-bamboo, and wood carving—shape durable objects with simple, regional motifs.</p>
-    </div>
-  </div>
-  </a>
-  
-</div>
+        <div class="card">
+            <a href="#"><img src="images/artform4.jpg" class="card-img-top" alt="Masks, Puppetry, and Performing Crafts"></a>
+            <div class="card-body">
+                <h5 class="card-title">Masks, Puppetry, and Performing Crafts</h5>
+                <p class="card-text">Masks in Indian performance traditions—such as Chhau, Theyyam, and Himalayan Cham—are crafted from clay, wood, bamboo, or papier-mâché to embody deities, spirits, and heroes in ritual theatre. Puppetry spans string (Kathputli), shadow (Tholu Bommalata, Togalu Gombeyaata), and glove/rod forms, with artisans making masks, costumes, and props that animate epics and folklore on stage.</p>
+            </div>
+        </div>
 
+        <div class="card">
+            <a href="#"><img src="images/artform5.jpg" class="card-img-top" alt="Weaving and Loom Heritage"></a>
+            <div class="card-body">
+                <h5 class="card-title">Weaving and Loom Heritage</h5>
+                <p class="card-text">India’s weaving and loom heritage spans millennia, from fine cotton muslins and khadi to luxuriant silks like Kanchipuram, Banarasi, Paithani, and rich woollens such as Kani and Kullu shawls. Distinct regional looms and techniques create signature textures, borders, and motifs, preserving living traditions of handloom craftsmanship.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <a href="#"><img src="images/artform6.jpg" class="card-img-top" alt="Stone, Lacquer, and Other Crafts"></a>
+            <div class="card-body">
+                <h5 class="card-title">Stone, Lacquer, and Other Crafts</h5>
+                <p class="card-text">Stone crafts include temple sculpture, jali latticework, and everyday utensils carved in marble, sandstone, and granite. Lacquer crafts like Etikoppaka, Channapatna, and Kutch turn wood and gourds glossy for toys, bangles, and decor, while allied traditions—bidri inlay, bell-metal casting, terracotta, cane-bamboo, and wood carving—shape durable objects with simple, regional motifs.</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
