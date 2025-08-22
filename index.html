@@ -1,53 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cubic benzier</title>
-    <link rel="stylesheet" href="homepage.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sutradhar</title>
+  <link rel="stylesheet" href="homepage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    	<nav class="navbar">
-		<div class="navdiv">
-			<div class="logo"><a href="#">Sutradhar</a> </div>
-			<ul>	
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Artists</a></li>
-                    <li><a href="artform.html">Artform</a></li>
-                    <li><a href="community.html">Community</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-			</ul>
-		</div>
-	</nav>
-       <div class="content">
-        <h1 class="heading">Sutradhar</h1>
-        <h2 class="head2">Weaving the stories of Indian art</h2>
-       
-        <p class="para">India’s traditional artforms like Warli, Pithora, and Madhubani are not just paintings — they are living stories of heritage, community, and identity. Yet in today’s fast-changing world, many of these rich traditions remain unseen and unheard.
-
-Our platform is dedicated to preserving and promoting these artforms by providing a digital home where local artists can showcase their creations to global audiences. Here, you can explore unique collections, learn about the history and meaning behind each artwork, and directly connect with the artists who keep these traditions alive.
-
-By bridging age-old craftsmanship with modern technology, we aim to create a sustainable ecosystem where artists thrive, audiences engage meaningfully, and cultural heritage continues to inspire generations.</p>
+  <nav class="navbar">
+    <div class="navdiv">
+      <div class="logo"><a href="#">Sutradhar</a></div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Artists</a></li>
+        <li><a href="artform.html">Artform</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
     </div>
-    
-    <div class="container">
-        <h2>Art forms</h2>
-        
-        <div class="item"><img src="images/art1.jpg" alt=""></div>
-        <div class="item"> <img src="images/art2.jpg" alt=""></div>
-        <div class="item"> <img src="images/art3.jpg" alt=""></div>
-        <div class="item"> <img src="images/art4.jpg" alt=""></div>
-        <div class="item"> <img src="images/art5.jpg" alt=""></div>
-        <div class="item"> <img src="images/art6.jpg" alt=""></div>
-        <div class="item"> <img src="images/art7.jpg" alt=""></div>
-        <div class="item"> <img src="images/art8.jpg" alt=""></div>
-        <div class="item"> <img src="images/art9.jpg" alt=""></div>
-        <div class="item"> <img src="images/art10.jpg" alt=""></div>
+  </nav>
 
+  <div class="content">
+    <h1 class="heading">Sutradhar</h1>
+    <h2 class="head2">Weaving the stories of Indian art</h2>
+    <p class="para">
+      India’s traditional artforms like Warli, Pithora, and Madhubani are not just paintings — they are living stories of heritage, community, and identity. Yet in today’s fast-changing world, many of these rich traditions remain unseen and unheard.
+      <br><br>
+      Our platform is dedicated to preserving and promoting these artforms by providing a digital home where local artists can showcase their creations to global audiences. Here, you can explore unique collections, learn about the history and meaning behind each artwork, and directly connect with the artists who keep these traditions alive.
+      <br><br>
+      By bridging age-old craftsmanship with modern technology, we aim to create a sustainable ecosystem where artists thrive, audiences engage meaningfully, and cultural heritage continues to inspire generations.
+    </p>
+  </div>
 
-    </div>
+  <div class="container">
+    <h2>Art forms</h2>
+    <div class="item"><img src="images/art1.jpg" alt=""></div>
+    <div class="item"><img src="images/art2.jpg" alt=""></div>
+    <div class="item"><img src="images/art3.jpg" alt=""></div>
+    <div class="item"><img src="images/art4.jpg" alt=""></div>
+    <div class="item"><img src="images/art5.jpg" alt=""></div>
+    <div class="item"><img src="images/art6.jpg" alt=""></div>
+    <div class="item"><img src="images/art7.jpg" alt=""></div>
+    <div class="item"><img src="images/art8.jpg" alt=""></div>
+    <div class="item"><img src="images/art9.jpg" alt=""></div>
+    <div class="item"><img src="images/art10.jpg" alt=""></div>
+  </div>
+
+  <!-- Firebase Scripts -->
+  <script type="module">
+    // Import Firebase SDK
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBv23cbRzW4y224z3YDPPMvGMkx0k-Mxu8",
+      authDomain: "sutradhar-2c17d.firebaseapp.com",
+      projectId: "sutradhar-2c17d",
+      storageBucket: "sutradhar-2c17d.firebasestorage.app",
+      messagingSenderId: "527545107973",
+      appId: "1:527545107973:web:a7f1548107c826429bbe6c",
+      measurementId: "G-86KK9NQDDT"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
 </body>
 </html>
