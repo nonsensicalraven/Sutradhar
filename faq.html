@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FolkArt Connect - FAQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+   <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: url("weaving.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+header, footer {
+  background: rgba(44, 62, 80, 0.6); /* semi-transparent */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 { margin: 0; }
+
+.faq-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 10px;
+  background: rgba(0,0,0,0.5); /* dark transparent box */
+  border-radius: 12px;
+}
+
+.faq {
+  background: rgba(255,255,255,0.1);
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.faq:hover {
+  background: rgba(255,255,255,0.2);
+}
+.faq h3 {
+  margin: 0;
+  color: #ffdd57;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.faq p {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  margin-top: 10px;
+  color: #f1f1f1;
+}
+.faq.active p {
+  max-height: 200px; /* enough space for answer */
+  opacity: 1;
+}
+
+footer {
+  font-size: 16px;
+  margin-top: 50px;
+}
+
+h1 {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style : normal;
+}
+
+</style>
+
+</head>
+<body>
+  <header>
+    <h1>FolkArt Connect</h1>
+    <p>Preserving Indian Heritage in the Digital Age</p>
+  </header>
+
+  <section class="faq-container">
+    <div class="faq">
+      <h3>What is FolkArt Connect?</h3>
+      <p>It is a digital platform to promote and preserve traditional Indian artforms like Warli, Pithora, and Madhubani.</p>
+    </div>
+    <div class="faq">
+      <h3>How can artists showcase their artwork?</h3>
+      <p>Artists can create profiles, upload images of their art, and share stories behind their creations.</p>
+    </div>
+    <div class="faq">
+      <h3>Can buyers support artists?</h3>
+      <p>Yes! Buyers can purchase art directly, commission custom work, or support artists via donations.</p>
+    </div>
+    <div class="faq">
+      <h3>What artforms are promoted?</h3>
+      <p>The artforms mainly promoted are categorised as painting and scroll traditions, textile, dyeing and printing arts, ritual floor and body arts, masks, puppetry and performing crafts, wood, metal, Terracotta and stone traditions, weaving and loom heritage.
+      More detailed information is provided in the artforms section.</p>
+    </div>
+    <div class="faq">
+      <h3>Can I contact artists directly?</h3>
+      <p>Yes, each artist profile has contact details or a message option.</p>
+    </div>
+    <div class="faq">
+      <h3>Can I sell my artwork on FolkArt Connect?</h3>
+      <p>Yes, each artist profile has contact details or a message option.</p>
+    </div>
+    <div class="faq">
+      <h3>Is there a membership fee for artists?</h3>
+      <p>No, joining FolkArt Connect is free for artists. Some premium features may require a subscription in the future.</p>
+    </div>
+    <div class="faq">
+      <h3>Are the artworks original and authentic?</h3>
+      <p>All artists are verified and their work is original. We encourage traditional techniques and authentic folk styles.</p>
+    </div>
+    <div class="faq">
+      <h3>Can I buy digital versions of the artwork?</h3>
+      <p>Yes, digital downloads of certain artworks are available for purchase with permission from the artist.</p>
+    </div>
+
+    <div class="faq">
+      <h3>How do I commission a custom artwork?</h3>
+      <p>Buyers can directly contact the artist via the profile page to request a personalized piece.</p>
+    </div>
+
+    <div class="faq">
+      <h3>Can I follow my favorite artists?</h3>
+      <p>Yes, you can follow artists to get updates when they post new artwork or exhibitions.</p>
+    </div>
+
+    <div class="faq">
+      <h3>Does FolkArt Connect organize offline events?</h3>
+      <p>Occasionally, we collaborate with local exhibitions, workshops, and art festivals to promote folk art.</p>
+    </div>
+
+    <div class="faq">
+      <h3>How is my payment secured?</h3>
+      <p>All transactions are processed through secure payment gateways ensuring safe purchases.</p>
+    </div>
+    
+  </section>
+
+  <footer>
+    <p>&copy; 2025 FolkArt Connect | Preserving Culture with Technology</p>
+  </footer>
+
+  <script>
+const faqs = document.querySelectorAll(".faq");
+
+faqs.forEach(faq => {
+  faq.addEventListener("click", () => {
+    faq.classList.toggle("active");
+
+    // Close others when one is opened (optional)
+    faqs.forEach(other => {
+      if (other !== faq) other.classList.remove("active");
+    });
+  });
+});
+</script>
+
+</body>
+</html>
