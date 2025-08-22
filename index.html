@@ -54,7 +54,7 @@
     <div class="item"><img src="images/art9.jpg" alt=""></div>
     <div class="item"><img src="images/art10.jpg" alt=""></div>
   </div>
-  
+
   <!-- Firebase Auth Forms -->
   <div class="auth-form">
     <h3>Register</h3>
@@ -69,7 +69,7 @@
   </div>
   <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyBv23cbRzW4y224z3YDPPMvGMkx0k-Mxu8",
@@ -84,20 +84,36 @@
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  // Register button click
-  const registerBtn = document.getElementById("register-btn");
+  const registerBtn = document.getElementById("registerBtn");
+  const loginBtn = document.getElementById("loginBtn");
+
+  // Register
   registerBtn.addEventListener("click", () => {
-    const email = document.getElementById("register-email").value;
-    const password = document.getElementById("register-password").value;
+    const email = document.getElementById("registerEmail").value;
+    const password = document.getElementById("registerPassword").value;
 
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then(userCredential => {
         alert("Registration successful!");
         console.log(userCredential.user);
       })
-      .catch((error) => {
+      .catch(error => {
         alert("Error: " + error.message);
-        console.error(error);
+      });
+  });
+
+  // Login
+  loginBtn.addEventListener("click", () => {
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then(userCredential => {
+        alert("Login successful!");
+        console.log(userCredential.user);
+      })
+      .catch(error => {
+        alert("Error: " + error.message);
       });
   });
 </script>
