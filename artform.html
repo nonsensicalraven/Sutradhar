@@ -10,11 +10,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Firebase Auth SDK -->
-<script type="module" src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
-<script type="module" src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
-<!-- Auth check -->
-<script type="module" src="auth-check.js"></script>
+   <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+// Firebase config (same as your index.html)
+const firebaseConfig = {
+  apiKey: "AIzaSyBv23cbRzW4y224z3YDPPMvGMkx0k-Mxu8",
+  authDomain: "sutradhar-2c17d.firebaseapp.com",
+  projectId: "sutradhar-2c17d",
+  storageBucket: "sutradhar-2c17d.firebasestorage.app",
+  messagingSenderId: "527545107973",
+  appId: "1:527545107973:web:a7f1548107c826429bbe6c",
+  measurementId: "G-86KK9NQDDT"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// Check if user is logged in
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    alert("You must log in first!");
+    window.location.href = "index.html";
+  }
+});
+</script>
+
 <nav class="navbar">
 		<div class="navdiv">
 			<div class="logo"><a href="#">Sutradhar</a> </div>
