@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Posts</title>
+  <style>
+    body {
+      
+      margin: 0;
+      
+   
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5),hsla(0, 0%, 0%, 0.5)) ,url(art\ and\ culture.jpg);
+    background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+height: 250vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+*{
+			text-decoration: none;
+		}
+		.navbar{
+			 font-family: calibri; padding-right: 15px;padding-left: 15px;
+             width: 100%;
+             padding: 10px;
+             
+   background-color: rgba(0, 0, 0, 0.5);
+		}
+		.navdiv{
+			display: flex; align-items: center; justify-content: space-between;
+            
+		}
+		.logo a{
+			font-size: 35px; font-weight: 600; color: white;
+		}
+		li{
+			list-style: none; display: inline-block;
+		}
+		li a{
+			color: white; font-size: 18px; font-weight: bold; margin-right: 25px;
+		}
+		button{
+			background-color: black; margin-left: 10px; border-radius: 10px; padding: 10px; width: 90px;
+		}
+		button a{
+			color: white; font-weight: bold; font-size: 15px;
+		}
+    ul li a:hover{
+    background-color: rgb(252, 181, 49);
+    padding: 5px;
+    border: 2px;
+    border-radius: 2px;
+    }
+      h1 {
+   font-size: 100px;
+    margin:0;
+    text-align: center;
+    padding: 20px;
+    border: 10px;
+    font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: aliceblue;
+}
+    
+
+
+.post-form, .posts-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  width: 90%;          
+  max-width: 1200px;  
+}
+
+    .post-form input, .post-form textarea, .post-form button {
+      width: 97%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 1rem;
+    }
+
+    .post-form button {
+      background:  rgb(252, 181, 49);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .post-form button:hover {
+      background:  rgb(154, 152, 4);
+    }
+
+    .posts-container {
+      max-width: 600px;
+    }
+
+    .post {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .post h3 {
+      margin: 0 0 10px;
+    }
+
+    .post small {
+      color: #666;
+    }
+  </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  
+  <nav class="navbar">
+		<div class="navdiv">
+			<div class="logo"><a href="#">Sutradhar</a> </div>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#">Artists</a></li>
+				<li><a href="artform.html">Artform</a></li>
+				<li><a href="community.html">Community</a></li>
+				<li><a href="faq.html">FAQ</a></li>
+			</ul>
+		</div>
+	</nav>
+    <h1>Community Posts</h1>
+
+  <!-- Post Form -->
+  <div class="post-form">
+    <input type="text" id="postTitle" placeholder="Enter post title" required>
+    <textarea id="postContent" rows="4" placeholder="Write your post here..." required></textarea>
+    <button onclick="addPost()">Post</button>
+  </div>
+
+  <!-- Posts Feed -->
+  <div class="posts-container" id="postsContainer">
+    <!-- New posts will appear here -->
+  </div>
+
+  <script>
+    function addPost() {
+      const title = document.getElementById("postTitle").value.trim();
+      const content = document.getElementById("postContent").value.trim();
+
+      if (!title || !content) {
+        alert("Please fill in both fields!");
+        return;
+      }
+
+      // Create post element
+      const postDiv = document.createElement("div");
+      postDiv.classList.add("post");
+
+      const time = new Date().toLocaleString();
+
+      postDiv.innerHTML = `
+        <h3>${title}</h3>
+        <p>${content}</p>
+        <small>Posted on ${time}</small>
+      `;
+
+      // Add new post at the top
+      const postsContainer = document.getElementById("postsContainer");
+      postsContainer.prepend(postDiv);
+
+      // Clear form
+      document.getElementById("postTitle").value = "";
+      document.getElementById("postContent").value = "";
+    }
+  </script>
+
+</body>
+</html>
