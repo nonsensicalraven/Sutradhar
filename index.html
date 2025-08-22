@@ -8,6 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+    /* Tiny form styling for Firebase Auth */
+    .auth-form { max-width: 400px; margin: 40px auto; padding: 20px; background: rgba(0,0,0,0.5); border-radius: 12px; color: white; }
+    .auth-form input { width: 100%; padding: 10px; margin: 8px 0; border-radius: 6px; border: none; }
+    .auth-form button { padding: 10px 15px; border-radius: 6px; border: none; background: #ffdd57; cursor: pointer; }
+  </style>
 </head>
 <body>
   <nav class="navbar">
@@ -49,13 +55,25 @@
     <div class="item"><img src="images/art10.jpg" alt=""></div>
   </div>
 
+  <!-- Firebase Auth Forms -->
+  <div class="auth-form">
+    <h3>Register</h3>
+    <input type="email" id="registerEmail" placeholder="Email">
+    <input type="password" id="registerPassword" placeholder="Password">
+    <button onclick="registerUser()">Register</button>
+
+    <h3>Login</h3>
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPassword" placeholder="Password">
+    <button onclick="loginUser()">Login</button>
+  </div>
+
   <!-- Firebase Scripts -->
   <script type="module">
-    // Import Firebase SDK
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } 
+      from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-    // Your web app's Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyBv23cbRzW4y224z3YDPPMvGMkx0k-Mxu8",
       authDomain: "sutradhar-2c17d.firebaseapp.com",
@@ -66,9 +84,34 @@
       measurementId: "G-86KK9NQDDT"
     };
 
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+    const auth = getAuth(app);
+
+    // Register user
+    function registerUser() {
+      const email = document.getElementById("registerEmail").value;
+      const password = document.getElementById("registerPassword").value;
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(userCredential => {
+          alert("Registered: " + userCredential.user.email);
+        })
+        .catch(error => {
+          alert(error.message);
+        });
+    }
+
+    // Login user
+    function loginUser() {
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+      signInWithEmailAndPassword(auth, email, password)
+        .then(userCredential => {
+          alert("Logged in: " + userCredential.user.email);
+        })
+        .catch(error => {
+          alert(error.message);
+        });
+    }
   </script>
 </body>
 </html>
