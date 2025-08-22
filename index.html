@@ -10,9 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
   <style>
     /* Tiny form styling for Firebase Auth */
-    .auth-form { max-width: 400px; margin: 40px auto; padding: 20px; background: rgba(0,0,0,0.5); border-radius: 12px; color: white; }
+    .auth-form { max-width: 400px; margin: 40px auto; padding: 20px; background: rgba(0,0,0,0.6); border-radius: 12px; color: white; }
     .auth-form input { width: 100%; padding: 10px; margin: 8px 0; border-radius: 6px; border: none; }
-    .auth-form button { padding: 10px 15px; border-radius: 6px; border: none; background: #ffdd57; cursor: pointer; }
+    .auth-form button { padding: 10px 15px; border-radius: 6px; border: none; background: #ffdd57; cursor: pointer; width: 100%; margin-top: 10px; }
+    .auth-form h2 { text-align: center; font-family: 'Dancing Script', cursive; margin-bottom: 15px; }
   </style>
 </head>
 <body>
@@ -57,65 +58,65 @@
 
   <!-- Firebase Auth Forms -->
   <div class="auth-form">
-    <h3>Register</h3>
+    <h2>Register</h2>
     <input type="email" id="registerEmail" placeholder="Email">
     <input type="password" id="registerPassword" placeholder="Password">
-    <button onclick="registerUser()">Register</button>
+    <button id="registerBtn">Register</button>
 
-    <h3>Login</h3>
+    <h2>Login</h2>
     <input type="email" id="loginEmail" placeholder="Email">
     <input type="password" id="loginPassword" placeholder="Password">
-    <button onclick="loginUser()">Login</button>
+    <button id="loginBtn">Login</button>
   </div>
+
+  <!-- Firebase -->
   <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyBv23cbRzW4y224z3YDPPMvGMkx0k-Mxu8",
-    authDomain: "sutradhar-2c17d.firebaseapp.com",
-    projectId: "sutradhar-2c17d",
-    storageBucket: "sutradhar-2c17d.firebasestorage.app",
-    messagingSenderId: "527545107973",
-    appId: "1:527545107973:web:a7f1548107c826429bbe6c",
-    measurementId: "G-86KK9NQDDT"
-  };
+    const firebaseConfig = {
+      apiKey: "AIzaSyBv23cbRzW4y224z3YDPPMvGMkx0k-Mxu8",
+      authDomain: "sutradhar-2c17d.firebaseapp.com",
+      projectId: "sutradhar-2c17d",
+      storageBucket: "sutradhar-2c17d.firebasestorage.app",
+      messagingSenderId: "527545107973",
+      appId: "1:527545107973:web:a7f1548107c826429bbe6c",
+      measurementId: "G-86KK9NQDDT"
+    };
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-  const registerBtn = document.getElementById("registerBtn");
-  const loginBtn = document.getElementById("loginBtn");
+    const registerBtn = document.getElementById("registerBtn");
+    const loginBtn = document.getElementById("loginBtn");
 
-  // Register
-  registerBtn.addEventListener("click", () => {
-    const email = document.getElementById("registerEmail").value;
-    const password = document.getElementById("registerPassword").value;
+    registerBtn.addEventListener("click", () => {
+      const email = document.getElementById("registerEmail").value;
+      const password = document.getElementById("registerPassword").value;
 
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(userCredential => {
-        alert("Registration successful!");
-        console.log(userCredential.user);
-      })
-      .catch(error => {
-        alert("Error: " + error.message);
-      });
-  });
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(userCredential => {
+          alert("Registration successful!");
+          console.log(userCredential.user);
+        })
+        .catch(error => {
+          alert("Error: " + error.message);
+        });
+    });
 
-  // Login
-  loginBtn.addEventListener("click", () => {
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
+    loginBtn.addEventListener("click", () => {
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then(userCredential => {
-        alert("Login successful!");
-        console.log(userCredential.user);
-      })
-      .catch(error => {
-        alert("Error: " + error.message);
-      });
-  });
-</script>
+      signInWithEmailAndPassword(auth, email, password)
+        .then(userCredential => {
+          alert("Login successful!");
+          console.log(userCredential.user);
+        })
+        .catch(error => {
+          alert("Error: " + error.message);
+        });
+    });
+  </script>
 </body>
 </html>
