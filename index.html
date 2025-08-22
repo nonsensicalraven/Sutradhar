@@ -67,51 +67,39 @@
     <input type="password" id="loginPassword" placeholder="Password">
     <button onclick="loginUser()">Login</button>
   </div>
-
-  <!-- Firebase Scripts -->
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } 
-      from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyBv23cbRzW4y224z3YDPPMvGMkx0k-Mxu8",
-      authDomain: "sutradhar-2c17d.firebaseapp.com",
-      projectId: "sutradhar-2c17d",
-      storageBucket: "sutradhar-2c17d.firebasestorage.app",
-      messagingSenderId: "527545107973",
-      appId: "1:527545107973:web:a7f1548107c826429bbe6c",
-      measurementId: "G-86KK9NQDDT"
-    };
+  const firebaseConfig = {
+    apiKey: "AIzaSyBv23cbRzW4y224z3YDPPMvGMkx0k-Mxu8",
+    authDomain: "sutradhar-2c17d.firebaseapp.com",
+    projectId: "sutradhar-2c17d",
+    storageBucket: "sutradhar-2c17d.firebasestorage.app",
+    messagingSenderId: "527545107973",
+    appId: "1:527545107973:web:a7f1548107c826429bbe6c",
+    measurementId: "G-86KK9NQDDT"
+  };
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
 
-    // Register user
-    function registerUser() {
-      const email = document.getElementById("registerEmail").value;
-      const password = document.getElementById("registerPassword").value;
-      createUserWithEmailAndPassword(auth, email, password)
-        .then(userCredential => {
-          alert("Registered: " + userCredential.user.email);
-        })
-        .catch(error => {
-          alert(error.message);
-        });
-    }
+  // Register button click
+  const registerBtn = document.getElementById("register-btn");
+  registerBtn.addEventListener("click", () => {
+    const email = document.getElementById("register-email").value;
+    const password = document.getElementById("register-password").value;
 
-    // Login user
-    function loginUser() {
-      const email = document.getElementById("loginEmail").value;
-      const password = document.getElementById("loginPassword").value;
-      signInWithEmailAndPassword(auth, email, password)
-        .then(userCredential => {
-          alert("Logged in: " + userCredential.user.email);
-        })
-        .catch(error => {
-          alert(error.message);
-        });
-    }
-  </script>
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        alert("Registration successful!");
+        console.log(userCredential.user);
+      })
+      .catch((error) => {
+        alert("Error: " + error.message);
+        console.error(error);
+      });
+  });
+</script>
 </body>
 </html>
