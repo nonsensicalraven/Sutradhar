@@ -151,3 +151,51 @@ body {
     width:140px;
     height: 250px;
 }
+/* ===================== */
+/* Firebase Auth Form CSS */
+/* ===================== */
+.auth-form {
+  max-width: 400px;
+  margin: 50px auto; /* centers form below your content */
+  padding: 20px;
+  background: rgba(0,0,0,0.7); /* semi-transparent dark box */
+  border-radius: 12px;
+  color: white;
+  position: relative;  /* ensures it’s on top */
+  z-index: 10;         /* clickable above other content */
+  text-align: center;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.auth-form button {
+  width: 95%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #fcB533; /* matches your hover color */
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.auth-form button:hover {
+  background-color: #ffdd57;
+}
+
+.auth-form h2 {
+  margin: 0 0 15px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+}
