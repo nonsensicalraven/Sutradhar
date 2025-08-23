@@ -88,13 +88,6 @@ body {
     border: 5px;
     }
 
-
-
-
-
-
-
-
 .content {
     max-width: 900px;
     margin: auto;
@@ -210,6 +203,19 @@ body {
   margin: 0 0 15px;
   font-family: 'Dancing Script', cursive;
   font-size: 28px;
+}
+/* ===== Fix Navbar ===== */
+.navbar {
+    position: fixed;   /* Fix it at the top */
+    top: 0;
+    left: 0;
+    width: 100%;       /* Full width */
+    z-index: 999;      /* On top of everything */
+}
+
+/* Push down content so it's not hidden behind navbar */
+.content {
+    margin-top: 100px;  /* Adjust based on navbar height */
 }
 
 
