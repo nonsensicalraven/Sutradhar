@@ -3,11 +3,11 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5),hsla(0, 0%, 0%, 0.5)) ,url(images/artandculture.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5),hsla(0, 0%, 0%, 0.5)) ,url(art\ and\ culture.jpg);
     background-size: cover;
 background-position: center center;
 background-repeat: no-repeat;
-height: 200vh;
+height: 250vh;
 } 
 *{
 			text-decoration: none;
