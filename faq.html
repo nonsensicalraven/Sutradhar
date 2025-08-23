@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FolkArt Connect - FAQ</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FolkArt Connect - FAQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-   <style>
+<style>
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -15,24 +15,68 @@ body {
   background-size: cover;
   color: #fff;
 }
-
+*{
+  text-decoration: none;
+}
+.navbar{
+  font-family: calibri;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.navdiv{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo a{
+  font-size: 35px;
+  font-weight: 600;
+  color: white;
+}
+li{
+  list-style: none;
+  display: inline-block;
+}
+li a{
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 25px;
+}
+button{
+  background-color: black;
+  margin-left: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 90px;
+}
+button a{
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+ul li a:hover{
+  background-color: rgb(252, 181, 49);
+  padding: 5px;
+  border-radius: 2px;
+}
 header, footer {
-  background: rgba(44, 62, 80, 0.6); /* semi-transparent */
+  background: rgba(44, 62, 80, 0.6);
   color: white;
   padding: 20px;
   text-align: center;
 }
-
-h1 { margin: 0; }
-
+h1 { margin: 0; font-family: "Dancing Script", cursive; }
 .faq-container {
   max-width: 800px;
   margin: 40px auto;
   padding: 10px;
-  background: rgba(0,0,0,0.5); /* dark transparent box */
+  background: rgba(0,0,0,0.5);
   border-radius: 12px;
 }
-
 .faq {
   background: rgba(255,255,255,0.1);
   margin: 10px 0;
@@ -50,7 +94,7 @@ h1 { margin: 0; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS', sans-serif;
 }
 .faq p {
   max-height: 0;
@@ -61,138 +105,70 @@ h1 { margin: 0; }
   color: #f1f1f1;
 }
 .faq.active p {
-  max-height: 200px; /* enough space for answer */
+  max-height: 200px;
   opacity: 1;
 }
-
 footer {
   font-size: 16px;
   margin-top: 50px;
 }
-
-h1 {
-  font-family: "Dancing Script", cursive;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style : normal;
-}
-
 </style>
-
 </head>
 <body>
-  <header>
-    <h1>FolkArt Connect</h1>
-    <p>Preserving Indian Heritage in the Digital Age</p>
-  </header>
 
-  <section class="faq-container">
-    <div class="faq">
-      <h3>1. What is FolkArt Connect?</h3>
-      <p>FolkArt Connect is an online platform dedicated to promoting and preserving traditional folk arts from across India. It connects artists, enthusiasts, and learners to celebrate the diversity of folk art.</p>
-    </div>
-    <div class="faq">
-      <h3>2. Who can join FolkArt Connect?</h3>
-      <p>Anyone interested in folk arts—artists, students, educators, or enthusiasts—can join the platform to explore, learn, and participate in the community.</p>
-    </div>
-    <div class="faq">
-      <h3>3. Do I need to be an artist to participate?</h3>
-      <p>No. You can join to learn about folk arts, participate in discussions, attend workshops, or simply enjoy exploring the various art forms.</p>
-    </div>
-    <div class="faq">
-      <h3>4. How can I learn about different folk art forms on the platform?</h3>
-      <p>FolkArt Connect provides detailed pages for each art form, including history, techniques, notable artists, photos, videos, and tutorials.</p>
-    </div>
-    <div class="faq">
-      <h3>5. Can I submit my artwork or showcase my skills?</h3>
-      <p>Yes. Registered users can submit artwork, share videos, and participate in online exhibitions and contests to showcase their skills.</p>
-    </div>
-    <div class="faq">
-      <h3>6.Why is folk art important? </h3>
-      <p>Folk art preserves cultural heritage, tells stories of communities, promotes creativity, and strengthens identity across generations.</p>
-    </div>
-    <div class="faq">
-      <h3>7. How can I connect with other artists and enthusiasts?</h3>
-      <p>You can join community forums, discussion groups, and social media integrations to connect, collaborate, and share ideas with fellow artists and enthusiasts.</p>
-    </div>
-    <div class="faq">
-      <h3>8. Is FolkArt Connect only about Indian folk art?</h3>
-      <p>Primarily, the platform focuses on Indian folk arts, but it may occasionally feature global folk art traditions for comparative learning.</p>
-    </div>
-    <div class="faq">
-      <h3>9. What types of folk art are featured on FolkArt Connect?</h3>
-      <p>The platform highlights various forms like Warli, Madhubani, Pithora, Gond, Tanjore, Kalamkari, and more, including painting, sculpture, crafts, music, and dance.</p>
-    </div>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navdiv">
+    <div class="logo"><a href="#">FolkArt Connect</a></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Artists</a></li>
+      <li><a href="artform.html">Artform</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <div class="faq">
-      <h3>10. Is there a cost to access content on FolkArt Connect?</h3>
-      <p>Most of the educational content and community features are free. Certain premium workshops or masterclasses may have a fee, which will be clearly mentioned.</p>
-    </div>
+<header>
+  <h1>FolkArt Connect</h1>
+  <p>Preserving Indian Heritage in the Digital Age</p>
+</header>
 
-    <div class="faq">
-      <h3>11. Who can I contact if I have questions or need help?</h3>
-      <p>You can reach out via the Contact Us page or email the support team for any inquiries related to content, events, or participation.</p>
-    </div>
+<section class="faq-container">
+  <div class="faq">
+    <h3>1. What is FolkArt Connect?</h3>
+    <p>FolkArt Connect is an online platform dedicated to promoting and preserving traditional folk arts from across India. It connects artists, enthusiasts, and learners to celebrate the diversity of folk art.</p>
+  </div>
+  <div class="faq">
+    <h3>2. Who can join FolkArt Connect?</h3>
+    <p>Anyone interested in folk arts—artists, students, educators, or enthusiasts—can join the platform to explore, learn, and participate in the community.</p>
+  </div>
+  <div class="faq">
+    <h3>3. Do I need to be an artist to participate?</h3>
+    <p>No. You can join to learn about folk arts, participate in discussions, attend workshops, or simply enjoy exploring the various art forms.</p>
+  </div>
+  <div class="faq">
+    <h3>4. How can I learn about different folk art forms on the platform?</h3>
+    <p>FolkArt Connect provides detailed pages for each art form, including history, techniques, notable artists, photos, videos, and tutorials.</p>
+  </div>
+  <div class="faq">
+    <h3>5. Can buyers support artists?</h3>
+    <p>Not yet—but we are aiming to enable buyers to purchase artwork or commission custom work in the future.</p>
+  </div>
+  <!-- Add the rest of your FAQs here exactly like above -->
+</section>
 
-    <div class="faq">
-      <h3>12. Can I contribute articles, tutorials, or blogs about folk art?</h3>
-      <p>Yes. FolkArt Connect encourages enthusiasts and experts to contribute educational content, which can be reviewed and published on the platform.</p>
-    </div>
+<footer>
+  <p>&copy; 2025 FolkArt Connect | Preserving Culture with Technology</p>
+</footer>
 
-    <div class="faq">
-      <h3>13. Who creates folk art?</h3>
-      <p>Folk art is traditionally created by local artists or artisans within a community. It is often passed down through generations.</p>
-    </div>
-
-    <div class="faq">
-      <h3>14. Is folk art only for professional artists?</h3>
-      <p>No. Anyone interested can appreciate, learn, or practice folk art, whether as a hobby, for education, or for community engagement.</p>
-    </div>
-
-    <div class="faq">
-      <h3>15. What materials are typically used in folk art?</h3>
-      <p>Folk art often uses natural materials like clay, wood, stone, leaves, fabric, natural dyes, and locally sourced paints.</p>
-    </div>
-
-    <div class="faq">
-      <h3>16. How old are these art forms?</h3>
-      <p>Many folk arts have existed for hundreds or even thousands of years, reflecting the history and traditions of various regions in India.</p>
-    </div>
-
-    <div class="faq">
-      <h3>17. Are folk arts the same across India?</h3>
-      <p>No. Each region has unique styles, motifs, and techniques influenced by local culture, history, and environment.</p>
-    </div>
-
-    <div class="faq">
-      <h3>18. Can children learn folk art?</h3>
-      <p>Absolutely. Folk art is often taught to children to encourage creativity, cultural awareness, and traditional skills.</p>
-    </div>
-
-    <div class="faq">
-      <h3>19. Why should I use FolkArt Connect?</h3>
-      <p>It’s a central hub to learn, share, and preserve folk arts, connect with artists, participate in workshops, and celebrate cultural heritage.</p>
-    </div>
-    
-    <div class="faq">
-      <h3>20. Is FolkArt Connect only for Indians?</h3>
-      <p>No. Anyone interested in folk art worldwide can explore, learn, and participate in the community.</p>
-    </div>
-    
-  </section>
-
-  <footer>
-    <p>&copy; 2025 FolkArt Connect | Preserving Culture with Technology</p>
-  </footer>
-
-  <script>
+<script>
 const faqs = document.querySelectorAll(".faq");
 
 faqs.forEach(faq => {
   faq.addEventListener("click", () => {
     faq.classList.toggle("active");
-
-    // Close others when one is opened (optional)
     faqs.forEach(other => {
       if (other !== faq) other.classList.remove("active");
     });
