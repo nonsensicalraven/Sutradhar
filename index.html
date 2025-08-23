@@ -9,14 +9,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
   <style>
-    /* Tiny form styling for Firebase Auth */
-    .auth-form { max-width: 400px; margin: 40px auto; padding: 20px; background: rgba(0,0,0,0.6); border-radius: 12px; color: white; }
-    .auth-form input { width: 100%; padding: 10px; margin: 8px 0; border-radius: 6px; border: none; }
-    .auth-form button { padding: 10px 15px; border-radius: 6px; border: none; background: #ffdd57; cursor: pointer; width: 100%; margin-top: 10px; }
-    .auth-form h2 { text-align: center; font-family: 'Dancing Script', cursive; margin-bottom: 15px; }
+    /* Auth form styling */
+    #authForm {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 12px;
+      color: white;
+      z-index: 1000;
+      position: relative;
+    }
+    #authForm input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: none;
+    }
+    #authForm button {
+      padding: 10px 15px;
+      border-radius: 6px;
+      border: none;
+      background: #ffdd57;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="navdiv">
       <div class="logo"><a href="#">Sutradhar</a></div>
@@ -30,6 +52,7 @@
     </div>
   </nav>
 
+  <!-- Hero Content -->
   <div class="content">
     <h1 class="heading">Sutradhar</h1>
     <h2 class="head2">Weaving the stories of Indian art</h2>
@@ -42,6 +65,7 @@
     </p>
   </div>
 
+  <!-- Art Forms -->
   <div class="container">
     <h2>Art forms</h2>
     <div class="item"><img src="images/art1.jpg" alt=""></div>
@@ -56,23 +80,23 @@
     <div class="item"><img src="images/art10.jpg" alt=""></div>
   </div>
 
-  <!-- Firebase Auth Forms -->
-  <div class="auth-form">
-    <h2>Register</h2>
+  <!-- Firebase Auth Form -->
+  <div id="authForm">
+    <h3>Register</h3>
     <input type="email" id="registerEmail" placeholder="Email">
     <input type="password" id="registerPassword" placeholder="Password">
     <button id="registerBtn">Register</button>
 
-    <h2>Login</h2>
+    <h3>Login</h3>
     <input type="email" id="loginEmail" placeholder="Email">
     <input type="password" id="loginPassword" placeholder="Password">
     <button id="loginBtn">Login</button>
   </div>
 
-  <!-- Firebase -->
+  <!-- Firebase SDK -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyBv23cbRzW4y224z3YDPPMvGMkx0k-Mxu8",
@@ -87,37 +111,35 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    const registerBtn = document.getElementById("registerBtn");
-    const loginBtn = document.getElementById("loginBtn");
+    const authForm = document.getElementById("authForm");
 
-    registerBtn.addEventListener("click", () => {
+    // Show alert + hide auth form after login
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        authForm.style.display = "none"; // hide form
+      } else {
+        authForm.style.display = "block"; // show form if logged out
+      }
+    });
+
+    // Register
+    document.getElementById("registerBtn").addEventListener("click", () => {
       const email = document.getElementById("registerEmail").value;
       const password = document.getElementById("registerPassword").value;
-
       createUserWithEmailAndPassword(auth, email, password)
-        .then(userCredential => {
-          alert("Registration successful!");
-          console.log(userCredential.user);
-        })
-        .catch(error => {
-          alert("Error: " + error.message);
-        });
+        .then(() => alert("Registration successful!"))
+        .catch((err) => alert("Error: " + err.message));
     });
 
-    loginBtn.addEventListener("click", () => {
+    // Login
+    document.getElementById("loginBtn").addEventListener("click", () => {
       const email = document.getElementById("loginEmail").value;
       const password = document.getElementById("loginPassword").value;
-
       signInWithEmailAndPassword(auth, email, password)
-        .then(userCredential => {
-          alert("Login successful!");
-          console.log(userCredential.user);
-        })
-        .catch(error => {
-          alert("Error: " + error.message);
-        });
+        .then(() => alert("Login successful!"))
+        .catch((err) => alert("Error: " + err.message));
     });
   </script>
-  <script type="module" src="auth.js"></script>
+
 </body>
 </html>
