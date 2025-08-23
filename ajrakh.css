@@ -1,0 +1,109 @@
+/* General body styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("weaving.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between; /* left + right */
+  align-items: center;
+  padding: 10px 20px; /* space inside navbar */
+  background-color: #111; /* adjust as per your theme */
+  color: white;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.back-btn {
+  text-decoration: none;
+  background-color: #da1c03; /* purple shade (you can change) */
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #0d0d0e;
+}
+
+/* Main container */
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 120px 50px 50px 50px; /* extra top margin to avoid navbar overlap */
+  padding: 40px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
+
+/* Left-side images */
+.art-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.art-images img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.4s ease,box-shadow 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+
+}
+
+/* Right-side content */
+.art-content {
+  flex: 2;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 46px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  margin-bottom: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    margin: 100px 20px 20px 20px;
+  }
+
+  .art-images {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .art-images img {
+    width: 45%;
+  }
+}
