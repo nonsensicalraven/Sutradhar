@@ -1,0 +1,130 @@
+body{
+  
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5),hsla(0, 0%, 0%, 0.5)) ,url(art\ and\ culture.jpg);
+    background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+height: 500vh;
+} 
+*{
+			text-decoration: none;
+		}
+       
+		.navbar {
+  display: flex;
+  justify-content: space-between; /* left + right */
+  align-items: center;
+  padding: 10px 20px; /* space inside navbar */
+  background-color: #111; /* adjust as per your theme */
+  color: white;
+}
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.back-btn {
+  text-decoration: none;
+  background-color: #da1c03; /* purple shade (you can change) */
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #0d0d0e;
+}
+      .content h1{
+    font-size: 100px;
+    margin:0;
+    text-align: center;
+    padding: 20px;
+    border: 10px;
+    font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: aliceblue;
+}
+p{
+    margin: 15px 0 40px;
+     text-align: center;
+     font-size: 21px;
+     padding: 2px;
+    border: 5px;
+    color: #f8f9fa;
+    }
+
+.card {
+  border: 1px solid #ddd;              /* subtle border */
+  border-radius: 8px;                  /* rounded corners */
+  overflow: hidden;                    /* keeps image corners aligned */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* soft shadow */
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: #fff;              /* white background */
+  display: flex;
+  flex-direction: column;              /* ensures footer sticks at bottom */
+  height: 100%;
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px; /* space between cards */
+  margin: 20px;
+}
+
+
+.card:hover {
+  transform: translateY(-5px);         /* lift effect */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+  height: 300px;                       /* fixed image height */
+  object-fit: cover;                   /* crop image neatly */
+  width: 100%;
+}
+
+.card-body {
+  padding: 1rem;
+  flex-grow: 1;                        /* expand so footer stays at bottom */
+  background-color: #212020;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #fcfafa;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #bcb8b8;
+}
+
+.card-footer {
+  background-color: #f8f9fa;           /* light grey footer */
+  border-top: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  color: #666;
+
+}
+.back{
+    align-items: center;
+}
+div a{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 25px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgb(229, 191, 23);
+    
+}
